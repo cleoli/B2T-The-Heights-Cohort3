@@ -1,0 +1,15 @@
+h1{
+	border: 10px outset grey;
+	text-align: center;
+	padding: 12px;
+	color: orange;
+	display: inline-block;
+}
+#ori{
+	color: blue;
+	border: none;
+}
+#pl{
+	color: purple;
+	border: none;
+}
