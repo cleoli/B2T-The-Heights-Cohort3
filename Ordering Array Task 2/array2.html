@@ -10,7 +10,7 @@
 			var input = prompt("Enter a fruit.");
 			fruits.push(input.toLowerCase());
 
-			console.log(fruits.sort().join(" with "));
+			document.getElementsByTagName("body")[0].innerHTML= "<h1>" + fruits.sort().join(" with ") + "</h1>";
 		</script>
 
 	</body>
