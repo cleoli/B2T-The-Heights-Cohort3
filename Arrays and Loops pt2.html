@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loop Class Task 4: Array and Loops pt2</title>
+    </head>
+
+    <body>
+        <script>
+            /*
+                Consider the following arrays:
+                var array = [5, 2, 10, 0, 50, 1900, 25, 25];
+                Use a loop to iterate throught the elements
+                Find the sum of all elements in the array
+            */
+
+            var array = [5, 2, 10, 0, 50, 1900, 25, 25];
+            var sum = 0;
+            for(var i=0; i<array.length; i++){
+                sum += array[i];
+            }
+            console.log(sum);
+            document.getElementsByTagName('body')[0].innerHTML += "The total of the numbers " + array + " is "+sum+".";
+        </script>
+    </body>
+</html>

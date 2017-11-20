@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loop Class Task 3: Array and Loops</title>
+    </head>
+
+    <body>
+        <script>
+            /*
+                Consider the following arrays:
+                color = ['Blue', 'green', 'Red', 'Orange', 'Violet', 'Indigo', 'Yellow'];
+                o = ['th', 'st', 'nd', 'rd'];
+                Display the colors in the following way:
+                    '1st choice is Blue.'
+                    '2nd choice is Green.'
+                    '3rd choice is Red.'
+                    ...
+            */
+
+            var color = ['Blue', 'Green', 'Red', 'Orange', 'Violet', 'Indigo', 'Yellow'];
+            var o = ['th', 'st', 'nd', 'rd'];
+            var output;
+            document.getElementsByTagName('body')[0].style.color = 'orange';
+            for(var i=1; i<=color.length; i++){
+                if(i === 1){
+                    output = i+o[1]+" choice is " + color[i-1];
+                }else if(i === 2){
+                    output = i+o[2]+" choice is " + color[i-1];
+                }else if(i === 3){
+                    output = i+o[3]+" choice is " + color[i-1];
+                }else{
+                    output = i+o[0]+" choice is " + color[i-1];
+                }
+                document.getElementsByTagName('body')[0].innerHTML += output + ".<br>";
+            } 
+        </script>
+    </body>
+</html>
