@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Functions and Objects Task 1: Displaying Names.</title>
+    </head>
+
+    <body>
+        <p id="display"></p>
+        <form>
+            First name: <input type="text" id="fname" value="Curtis"><br>
+            Last name: <input type="text" id="lname" value="Jackson"><br>
+            <input type="button" value="submit" onclick="getFormvalue()">
+        </form>
+    </body>
+
+    <script>
+        /*Get the values of First and Last name of the following form.
+        Then display those values on the web page like so: Hello Curtis Jackson
+        */
+        function getFormvalue(){
+            var firstN = document.getElementById('fname').value; console.log(firstN);
+            var lastN = document.getElementById('lname').value; console.log(lastN);
+            document.getElementById('display').innerHTML = "Hello " + firstN +" " + lastN;
+        }
+    </script>
+
+</html>
