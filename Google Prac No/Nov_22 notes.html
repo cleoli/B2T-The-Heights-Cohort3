@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Nov 22 Notes: Functions and Objects</title>
+        <link rel="stylesheet" type="text/css" href="Nov_22.css">
+    </head>
+
+    <body>
+        <h4>Functions</h4>
+        <p>Functions are blocks of code designed to perform a particular task when "something" invokes it(calls it).<br>
+           Function Syntax:<br>
+           function (parameters){<br> &nbsp;&nbsp;&nbsp;&nbsp;
+                lines of code;<br>
+            };
+         </p>
+         <p><em>Functions can be named. This will allow you to invoke it(call it) later on in your code.</em><br>
+            There are two ways to name a function<br>
+            <ul>
+                <li>Placing the name between the function keyword and the parameters.</li>
+                <li>Assigning the function to a variale.</li>
+            </ul>
+            function functionName(parameters){<br>&nbsp;&nbsp;&nbsp;&nbsp;
+            lines of code;<br>
+            }<br>
+            var functionName = function(parameters){<br>&nbsp;&nbsp;&nbsp;&nbsp;
+            lines of code;<br>
+            }
+         </p>
+         <h4>Parameters and Arguments</h4>
+         <p>
+            Parameters are placeholders for arguments. They act as local variables for the function. Not all funtions will require parameters. Arguments are the values given when a fucntion is called.
+         </p>
+         <h4>Return Statement</h4>
+         <p>
+            Functions can return a value by using a return statement. To do so, the return keyword must be at the end of your code followed by the value you want to return.
+         </p>
+         <h4>Scopes in Function</h4>
+         <p>
+            Variables created inside a fucntion can not be used outside of the function. The same foes for the functions' parameters.
+         </p>
+         <h4>HTML Events Example</h4>
+         <p>
+            Assuming this code is inside the body of an HTML file.<br>
+            &ltp id="text" onclick="textclicked()"&gt click me &lt/p&gt<br>
+            &ltscript&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;
+            function textclicked(){<br>&nbsp;&nbsp;&nbsp;&nbsp;
+            document.getElementById("text").innerHTML = "Ow that hurt";<br>
+            }<br>
+            &ltscript&gt
+         </p>
+         <h4>Invoking Functions in HTML</h4>
+         <p>
+            To call a fucntion from an HTML page you will have to use an HTML event. HTML events are "things" that happen to HTML elements. When the event happens the JavaScript code invokes.<br>
+            Syntax:<br>
+            &lthtmlElement event="jsFunction()"&gt
+         </p>
+         <h4>HTML Events</h4>
+         <p>
+            Some of the most commonly used events include:<br>
+            &nbsp;&nbsp;&nbsp;<em>onchange</em>-An HTML element has been changed<br>
+            &nbsp;&nbsp;&nbsp;<em>onclick</em>-The user clicks an HTML element<br>
+            &nbsp;&nbsp;&nbsp;<em>onmouseover</em>-The user moves the mouse over an HTML element<br>
+            &nbsp;&nbsp;&nbsp;<em>onkeydown</em>-The user pushes a keyboard key<br>
+            &nbsp;&nbsp;&nbsp;<em>onload</em>-The browser had finished loading the page<br>
+            For more HTML events vistit: <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">https://www.w3schools.com/jsref/dom_obj_event.asp</a>
+         </p>
+         <div id="practice1bgc">
+            <h4>Practice 1: Change the background color</h4>
+            <input type="text" placeholder="Enter a color" id="oneColor" onchange="changeBgc()">
+         </div>
+
+         <h4>Practice 2: Change image</h4>
+         <!-- Complete this practice
+         -->
+         <h4>Objects</h4>
+         <p>
+            Objects, like arrays, are variables that can hold multiple values. But instead of the values being identified with indices, they are identified with names. These are called properties.
+            <ul>
+                <li>Objects are created with curly braces { }, values go within them</li>
+                <li>Objects names and values are separated with colons:</li>
+                <li>Add multiple properties by separating them with commas ,</li>
+            </ul>
+            <strong>Syntax:</strong><br><br>
+            var obj = {<br> &nbsp;&nbsp;&nbsp;&nbsp;
+            name1: value1,
+            name2: value2
+            };<br><br>
+            <em>Practice: Creating a person object</em><br><br>
+            function makePerson(){<br> &nbsp;&nbsp;&nbsp;&nbsp;
+            var person = {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            name: 'Trey',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            age: 72,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            grade: [50, 84, 87, 90]<br>&nbsp;&nbsp;&nbsp;&nbsp;
+            }<br>&nbsp;&nbsp;&nbsp;&nbsp;
+            return person;<br>
+            }<br><br>
+            var p = makePerson();<br>
+            p.name = 'White';<br><br>
+            <em>You can add a new property to an object by:</em><br>
+            p.favoriteSubject = "Drawing";<br><br>
+            console.log('My name is ' + p.name + ', I am '+ p.age+ ' years old. My first grade is ' + p.grade[0] + ".");
+         </p>
+         <p>
+            <script>
+            /* needs work
+            */
+                
+            </script>
+         </p>
+         <p>
+         <em>Practice 2: Creating a person object with parameters</em><br><br>
+            function makePerson(name1, age1, grades1){<br> &nbsp;&nbsp;&nbsp;&nbsp;
+            var person = {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            name: name1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            age: age1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            grade: grades1<br>&nbsp;&nbsp;&nbsp;&nbsp;
+            }<br>&nbsp;&nbsp;&nbsp;&nbsp;
+            return person;<br>
+            }<br><br>
+            var p = makePerson('Thomas', 200, [60, 90, 99]);<br>
+         </p>
+         <h4>Data types used in objects</h4>
+         <p>
+            Objects can hold all data types. From primitive types, like strings and numbers, to complex types, like arrays, functions, and even another object.<br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            var baby = {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            name: "John Cena", <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            age: 2,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            canWalk: false,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            favoriteFood: ['Milk', 'Squash', 'Peas'],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            cry: function(){console.log("wahh");}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            }<br><br>
+            Properties that uses functions as its value are referred to as methods, actions that can be performed on objects.
+         </p>
+         <h4>Why Use Objects</h4>
+         <p>
+            Consider the baby example. All babies have the same properties, but the property values differ from baby to baby. All babies have the same methods, but the methods are performed at different times.<br><br>
+         </p>
+         <h4>Accessing Objects Properties and Methods</h4>
+         <p>
+            There are two ways of accessing properties/methods of an object.<br><br>
+            var dog = {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            breed: "pitbull",<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            speak: function(){console.log("BARK");}<br>
+            }
+            <ul>
+                <li>
+                    Dot notation (Most widely used)<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    dog.breed //returns "pitbull" <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    dog.speak() //prints BARK
+                </li>
+                <li>
+                    Square brackets<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    dog.[breed] //returns "pitbull" <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    dog.["speak"]() //prints BARK
+                </li>
+            </ul>
+         </p>
+         <h4>For/in Loop and Objects</h4>
+         <p>
+            For/in loop work very well with object<br><br>
+            var pets = {dog: "pug", cat: "ragdoll", cow: "angus"};<br><br>
+            for(var i in pets){ <br>//i will return the properties of the object ie. dog, cat, cow<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            console.log(i)<br>
+            }<br><br>
+            for(var i in pets){ <br>//pets[i] will return the values of the properties ie. "pug", "ragdoll", "angus"<br>
+            &nbsp; &nbsp; &nbsp; &nbsp
+            console.log(pets[i]);<br>
+            }
+         </p>
+        <script src="Nov_22.js">
+        </script>
+    </body>
+
+</html>
