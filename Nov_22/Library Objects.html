@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Functions and Objects Task 3: Library Objects.</title>
+    </head>
+
+    <body>
+        
+    
+
+        <script>
+            /*
+                If the reading status is true display "Already read '<insert title>' by <insert author>."
+                If the reading status is false display "You still need to read '<insert title>' by <insert author>."
+                Display results on webpage
+            */
+            var library =[
+                {author: 'Bill Gates', title:'The Road Ahead', readingStatus: true},
+                {author: 'Steve Jobs', title:'Walter Isaacson', readingStatus: true},
+                {author: 'Suzanne Collins', title:'Mockingjay: The Final Book of The Hunger Game', readingStatus: false}
+             ];
+            function rStatus(){
+                var output=[];
+                for(var i=0; i<library.length; i++){
+                    if(library.readingStatus){
+                        output.push('Aready read ' + library[i].title + " by " + library[i].author +".");
+                    }else{
+                        output.push('You still need to read ' + library[i].title + " by " + library[i].author +".");
+                    }
+                }
+
+                return output;
+            }
+            var outputs = rStatus();
+            document.getElementsByTagName('body')[0].innerHTML= outputs.join("<br>");
+
+        </script>
+    </body>
+
+</html>
