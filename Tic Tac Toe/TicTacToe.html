@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        2 player game
+            each player has own symbol
+            each player had one turn
+        Need 3 x 3 grid
+        Objective of the game is to get  3 of the same symbols in a row 
+        Player wins if 3 of their symbols are 
+            diagonally
+            horizontal
+            vertical
+        Game is tie when there is no more moves to make and no one has won
+
+        Things to do:
+        Create Grid
+        Initialize 'X' as first player
+            when 'X' makes move it is then 'O' turn
+            and vice versa
+        When grid is clicked display player's symbol
+        Evaluate the board
+    -->
+    <head>
+        <title>Tic Tac Toe</title>
+        <script>
+            var player = 'X';
+            var cI, board;
+            
+            function grid(num){
+                var str = '<table>' ;
+                for (var i=0; i<num; i++){
+                    str += '<tr>';
+                    for (var it=0; it<num; it++){
+                        str+= '<th onclick = "move(i+it)"></th>';
+                    }
+                    str += '</tr>';
+                }
+                str += '</table>';
+                document.getElementsByTagName('body')[0].innerHTML = str;
+                tableStyle(num);
+                board = document.getElementsByTagName('th');
+            }
+
+            function tableStyle(num){
+                for(var i=0; i < num*num; i++){
+                    if(i%num !== 0){
+                        document.getElementsByTagName('th')[i].style.borderLeft = 'double rgb(211, 115, 74) 7px';
+                    } 
+                    if(i<num*(num-1)){
+                        document.getElementsByTagName('th')[i].style.borderBottom = 'double rgb(79, 234, 108) 7px';
+                    }                
+                }
+            }
+
+            function move(ele){              
+                if(board[ele].innerHTML === ''){
+                    board[ele].innerHTML = player;
+                    board[ele].style.backgroundColor = (player === 'X')? 'rgb(118, 161, 242)': 'rgb(231, 241, 118)';
+                    player = (player === 'X')? 'O':'X';
+                }
+                
+            }
+
+            function checkB(){
+                
+                
+            }
+
+        </script>
+
+        <style>
+            body{
+                max-width: 500px;
+                margin: auto;
+            }
+            th{
+                //border: solid black 5px;
+                width: 200px;
+                height: 100px;
+                //border-radius: 12px;
+            }
+            th:hover{
+                background-color: rgb(164, 185, 219);
+            }
+        </style>
+    </head>
+
+    <body>
+        <button onclick='grid(3)'> Start </button>
+    </body>
+</html>

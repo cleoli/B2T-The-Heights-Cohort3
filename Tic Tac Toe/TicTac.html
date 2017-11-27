@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        2 player game
+            each player has own symbol
+            each player had one turn
+        Need 3 x 3 grid
+        Objective of the game is to get  3 of the same symbols in a row 
+        Player wins if 3 of their symbols are 
+            diagonally
+            horizontal
+            vertical
+        Game is tie when there is no more moves to make and no one has won
+
+        Things to do:
+        Create Grid
+        Initialize 'X' as first player
+            when 'X' makes move it is then 'O' turn
+            and vice versa
+        When grid is clicked display player's symbol
+        Evaluate the board
+    -->
+    <head>
+        <title>Tic Tac Toe</title>
+        <script>
+            var player = 'X';
+            //var move = 0;
+            function move(square){
+                    alert(square);
+                    square.innerHTML = player;
+                
+            }
+        </script>
+
+        <style>
+            th{
+                border: solid black 5px;
+                width: 200px;
+                height: 100px;
+            }
+            th:hover{
+                background-color: grey;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <th onclick='move(this);'>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </table>
+    </body>
+</html>
