@@ -115,6 +115,7 @@ li{
     padding-left: 12px;
     color:cadetblue;
 }
+
 @media screen and (max-width: 569px){
   #addCus, #cusServed{
     padding: 12px;
@@ -122,4 +123,12 @@ li{
     margin-top: 30px;
     border: none;
     width: 100%;
+    }
+}
+
+@media screen and (min-width:1000px){
+  body{
+      width: 80%;
+      margin:auto;
+  }
 }
